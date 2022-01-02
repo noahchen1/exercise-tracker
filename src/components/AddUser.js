@@ -372,6 +372,10 @@ export default function AddUser() {
                     <div style={flexContainer}>
                         <button style={saveButtonStyle}>Save</button>
                     </div>
+
+                    <div style={{marginTop: '10%'}}>
+                        <div style={{fontSize: '0.8em'}}>Note: the average person burns around 1800 calories a day doing absolutely nothing. Your activity goal should be higher than 1800.</div>
+                    </div>
                 </form>
             }
         </div>
