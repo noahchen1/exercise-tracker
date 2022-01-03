@@ -341,6 +341,7 @@ export default function Home() {
                     <div style={{width: '60%', minWidth: '100px'}}>
                         <CircularProgressbar value={getTodayPercentage()} text={totalCalories}/>
                     </div>
+                    
 
                     {isDesktop &&
                         <div style={{marginLeft: '20%', display: 'flex', width: '100px', flexWrap: 'wrap', alignItems: 'center'}}>
