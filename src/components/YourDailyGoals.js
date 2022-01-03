@@ -59,7 +59,7 @@ export default function YourDailyGoals({goalsAchieved, allWeekPercentage}) {
 
 
     return (
-        <div style={{display: 'flex', justifyContent: 'center', marginTop: '6%'}}>
+        <div style={{display: 'flex', justifyContent: 'center', marginTop: '4%'}}>
             {isDesktop &&
                 <div style={containerStyle}>
 

@@ -59,7 +59,7 @@ export default function EnergyExpanded({caloriesToday, caloriesThisWeek}) {
     }
 
     return (
-        <div style={{display: 'flex', justifyContent: 'center', marginTop: '6%'}}>
+        <div style={{display: 'flex', justifyContent: 'center', marginTop: '3%'}}>
 
             {isDesktop &&
                 <div  style={containerStyle}>
