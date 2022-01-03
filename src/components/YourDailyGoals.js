@@ -33,11 +33,10 @@ export default function YourDailyGoals({goalsAchieved, allWeekPercentage}) {
         borderColor: 'rgba(0, 0, 0, 0.2)',
         boxShadow: '0px 9px 15px -7px rgba(0, 0, 0, 0.3)',
         width: '60%',
-        minWidth: '230px',
+        minWidth: '280px',
         height: '150px',
         color: 'rgba(0, 0, 0, 0.7)',
         position: 'relative',
-        marginTop: '20px'
     }
 
     const gridStyle = {

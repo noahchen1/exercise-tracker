@@ -24,6 +24,7 @@ function App() {
     backgroundColor: 'rgb(253, 253, 253)',
     width: '66%',
     maxWidth: '900px',
+    minWidth: '350px',
     height: '93%',
     borderRadius: '32px',
     borderStyle: 'solid',
