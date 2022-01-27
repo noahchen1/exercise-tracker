@@ -100,6 +100,7 @@ export default function Home() {
         if(trigger === false) return
         if(!allActivites) return
         if(!username) return
+        if(!allActivites[username]) return
 
         // generating an array with the current week's dates starting from Sat to Fri to help sorting the activities by the current week days
 
@@ -135,6 +136,7 @@ export default function Home() {
                durationsToday.push(durationToday)
            }
        })
+
 
        // calculate calories from activities TODAY based on user's defined weight 
 
