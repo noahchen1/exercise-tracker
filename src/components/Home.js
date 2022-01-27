@@ -100,7 +100,6 @@ export default function Home() {
         if(trigger === false) return
         if(!allActivites) return
         if(!username) return
-        if(!allActivites[username]) return
 
         // generating an array with the current week's dates starting from Sat to Fri to help sorting the activities by the current week days
 
@@ -126,7 +125,9 @@ export default function Home() {
        const activitiesToday = []
        const durationsToday = []
 
-       const today = allActivites[username].map(item => {
+       const activitiesByUser = allActivites[username] || []
+
+       const today = activitiesByUser.map(item => {
            const todaysDate = new Date().toLocaleDateString()
            const allDays = new Date(item.start).toLocaleDateString()
            if(allDays === todaysDate) {
@@ -186,7 +187,7 @@ export default function Home() {
    
 
        if(weight[username] <= 125) {
-        allActivites[username].forEach(item => {
+        activitiesByUser.forEach(item => {
             const dateObj = new Date(item.start)
             if(dateArray.includes(dateObj.toLocaleDateString())) {
                 const day = days[dateObj.getDay()]
@@ -196,7 +197,7 @@ export default function Home() {
             }
         })
        } else if(weight[username] > 125 && weight[username] <= 155) {
-        allActivites[username].forEach(item => {
+        activitiesByUser.forEach(item => {
             const dateObj = new Date(item.start)
             if(dateArray.includes(dateObj.toLocaleDateString())) {
                 const day = days[dateObj.getDay()]
@@ -206,7 +207,7 @@ export default function Home() {
             }
         })
        } else {
-        allActivites[username].forEach(item => {
+        activitiesByUser.forEach(item => {
             const dateObj = new Date(item.start)
             if(dateArray.includes(dateObj.toLocaleDateString())) {
                 const day = days[dateObj.getDay()]
