@@ -13,6 +13,7 @@ const port = process.env.PORT || 5000
 // Conecting to MongoDB Atlas
 
 const URI = process.env.ATLAS_URI
+mongoose.set('strictQuery', false)
 mongoose.connect(URI)
 
 const connection = mongoose.connection
