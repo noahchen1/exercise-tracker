@@ -1,5 +1,6 @@
 const allowedOrigins = [
     'http://localhost:3000',
+    'https://exercise-tracker-wor9.onrender.com'
 ];
 
 const corsOptions = {

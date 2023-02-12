@@ -7,7 +7,7 @@ import 'react-circular-progressbar/dist/styles.css'
 import exerciseData from './ExcerciseData'
 import EnergyExpanded from './EnergyExpanded'
 import YourDailyGoals from './YourDailyGoals'
-
+import { serverUrl } from '../url/serverUrl'
 
 export default function Home() {
 
@@ -43,7 +43,7 @@ export default function Home() {
 
     
     useEffect(() => {
-        axios.get('http://localhost:5000/users/')
+        axios.get(`${serverUrl}/users/`)
         .then(res => {
             setUsers(res.data.map(user => user.username))
             setUsername(res.data[0].username)
@@ -79,7 +79,7 @@ export default function Home() {
         // here reduce loops through all the data, when it gets to the first unique username, it creates an empty array [] with the data from that instance added to this array. 
         // All activities with the same username then gets pushed to the same array. 
 
-        axios.get('http://localhost:5000/activities/')
+        axios.get(`${serverUrl}/activities/`)
         .then(res => {
             setAllActivities(res.data.reduce((acc, v) => {
                 acc[v.username] = acc[v.username] || []

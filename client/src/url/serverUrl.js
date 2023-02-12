@@ -1,0 +1,1 @@
+export const serverUrl = 'https://exercise-tracker-jucn.onrender.com';

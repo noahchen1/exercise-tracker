@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import DateTimePicker from 'react-datetime-picker'
 import { useMediaQuery } from 'react-responsive'
+import { serverUrl } from '../url/serverUrl'
 
 export default function AddActivity() {
 
@@ -22,7 +23,7 @@ export default function AddActivity() {
     })
 
     useEffect(() => {
-        axios.get('http://localhost:5000/users/')
+        axios.get(`${serverUrl}/users/`)
         .then(res => {
             setUsers(res.data.map(user => user.username))
             setUsername(res.data[0].username)
@@ -40,13 +41,9 @@ export default function AddActivity() {
             duration: duration,
         }
 
-        console.log(newActivity)
-
-        axios.post('http://localhost:5000/activities/add', newActivity)
+        axios.post(`${serverUrl}/activities/add`, newActivity)
             .then(res => console.log(res.data))
     }
-
-
 
     const onChangeUsername = e => {
         setUsername(e.target.value)

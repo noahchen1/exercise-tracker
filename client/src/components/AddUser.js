@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import DateTimePicker from 'react-datetime-picker'
 import { useMediaQuery } from 'react-responsive'
+import { serverUrl } from '../url/serverUrl'
 
 export default function AddUser() {
 
@@ -43,8 +44,7 @@ export default function AddUser() {
             height: height
         }
 
-        console.log(user)
-        axios.post('http://localhost:5000/users/add', user)
+        axios.post(`${serverUrl}/users/add`, user)
             .then( res => console.log(res.data))
     }
 
