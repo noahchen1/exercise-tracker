@@ -43,7 +43,7 @@ export default function Home() {
 
     
     useEffect(() => {
-        axios.get('https://activity-trackerr.herokuapp.com/users/')
+        axios.get('http://localhost:5000/users/')
         .then(res => {
             setUsers(res.data.map(user => user.username))
             setUsername(res.data[0].username)
@@ -79,7 +79,7 @@ export default function Home() {
         // here reduce loops through all the data, when it gets to the first unique username, it creates an empty array [] with the data from that instance added to this array. 
         // All activities with the same username then gets pushed to the same array. 
 
-        axios.get('https://activity-trackerr.herokuapp.com/activities/')
+        axios.get('http://localhost:5000/activities/')
         .then(res => {
             setAllActivities(res.data.reduce((acc, v) => {
                 acc[v.username] = acc[v.username] || []
@@ -159,11 +159,12 @@ export default function Home() {
            const milageFromActivities = []
            activitiesToday.map((v, i)=> {
             if(v.toLowerCase() == 'jogging') {
-                milageFromActivities.push(durationsToday[i] / 60 * 5)
+                milageFromActivities.push((durationsToday[i] / 60 * 5).toFixed(2))
             } else if(v.toLowerCase() == 'running') {
-                milageFromActivities.push(durationsToday[i] / 60 * 7.5)
+                milageFromActivities.push((durationsToday[i] / 60 * 7.5).toFixed(2))
             }
            })
+
            return milageFromActivities
        }
 
@@ -327,9 +328,9 @@ export default function Home() {
                         onChange={onChangeUsername}
                     >
                         {
-                            users.map(user => 
+                            users.map((user, idx) => 
                                 <option
-                                    key={user}
+                                    key={idx}
                                     value={user}
                                 >
                                     {user}

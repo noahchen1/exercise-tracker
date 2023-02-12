@@ -4,8 +4,6 @@ import axios from 'axios'
 import DateTimePicker from 'react-datetime-picker'
 import { useMediaQuery } from 'react-responsive'
 
-
-
 export default function AddActivity() {
 
     const [username, setUsername] = useState()
@@ -24,7 +22,7 @@ export default function AddActivity() {
     })
 
     useEffect(() => {
-        axios.get('https://activity-trackerr.herokuapp.com/users/')
+        axios.get('http://localhost:5000/users/')
         .then(res => {
             setUsers(res.data.map(user => user.username))
             setUsername(res.data[0].username)
@@ -44,7 +42,7 @@ export default function AddActivity() {
 
         console.log(newActivity)
 
-        axios.post('https://activity-trackerr.herokuapp.com/activities/add', newActivity)
+        axios.post('http://localhost:5000/activities/add', newActivity)
             .then(res => console.log(res.data))
     }
 

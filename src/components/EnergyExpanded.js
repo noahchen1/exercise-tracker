@@ -78,10 +78,10 @@ export default function EnergyExpanded({caloriesToday, caloriesThisWeek}) {
                     </div>
 
                     <div style={gridStyle}>
-                        {caloriesThisWeek.map(eachDay => {
+                        {caloriesThisWeek.map((eachDay, idx) => {
                             const percentage = eachDay * 100 
                             return (
-                            <div style={{position: 'relative', display: 'flex', justifyContent: 'center'}}>
+                            <div style={{position: 'relative', display: 'flex', justifyContent: 'center'}} key={idx}>
                                 <div 
                                     style={{backgroundColor: 'rgb(30, 86, 169)', height: `${percentage}%`, position: 'absolute', width: '50%', bottom: '0'}}
                                 />
@@ -116,10 +116,10 @@ export default function EnergyExpanded({caloriesToday, caloriesThisWeek}) {
                     </div>
 
                     <div style={gridStyleSmallScreeen}>
-                        {caloriesThisWeek.map(eachDay => {
+                        {caloriesThisWeek.map((eachDay, idx) => {
                             const percentage = eachDay * 100 
                             return (
-                            <div style={{position: 'relative', display: 'flex', justifyContent: 'center'}}>
+                            <div style={{position: 'relative', display: 'flex', justifyContent: 'center'}} key={idx}>
                                 <div 
                                     style={{backgroundColor: 'rgb(30, 86, 169)', height: `${percentage}%`, position: 'absolute', width: '50%', bottom: '0'}}
                                 />

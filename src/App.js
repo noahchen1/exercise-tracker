@@ -6,9 +6,6 @@ import AddUser from './components/AddUser';
 import AddActivity from './components/AddActivity';
 
 function App() {
-
-
-
   // Declaring styles as constants
 
   const backgroundStyle = {

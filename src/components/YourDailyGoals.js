@@ -74,9 +74,9 @@ export default function YourDailyGoals({goalsAchieved, allWeekPercentage}) {
                     </div>
 
                     <div style={gridStyle}>
-                        {allWeekPercentage.map(eachDay => {
+                        {allWeekPercentage.map((eachDay, idx) => {
                             return (
-                            <div style={{position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'flex-end'}}>
+                            <div style={{position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'flex-end'}} key={idx}>
                                 <div style={{width: '70%', marginBottom: '4px'}}>
                                     <CircularProgressbar value={eachDay}/>
                                 </div>
@@ -109,9 +109,9 @@ export default function YourDailyGoals({goalsAchieved, allWeekPercentage}) {
                     </div>
 
                     <div style={gridStyleSmallScreeen}>
-                        {allWeekPercentage.map(eachDay => {
+                        {allWeekPercentage.map((eachDay, idx) => {
                             return (
-                            <div style={{position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'flex-end'}}>
+                            <div style={{position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'flex-end'}} key={idx}>
                                 <div style={{width: '70%', marginBottom: '4px'}}>
                                     <CircularProgressbar value={eachDay}/>
                                 </div>

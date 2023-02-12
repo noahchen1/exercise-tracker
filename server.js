@@ -3,12 +3,11 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const path = require('path')
-
-
+const allowedOrigins = require('./config/allowedOrigins');
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+app.use(cors(allowedOrigins))
 const port = process.env.PORT || 5000
 
 // Conecting to MongoDB Atlas

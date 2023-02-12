@@ -44,7 +44,7 @@ export default function AddUser() {
         }
 
         console.log(user)
-        axios.post('https://activity-trackerr.herokuapp.com/users/add', user)
+        axios.post('http://localhost:5000/users/add', user)
             .then( res => console.log(res.data))
     }
 
